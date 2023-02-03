@@ -8,7 +8,7 @@ class Cart extends React.Component
         this.statis={
             products:[{
                 price:9999,
-                title:'phone',
+                title:'Mobile Phone',
                 qty: 1,
                 img:'',
                 id:1
@@ -28,9 +28,17 @@ class Cart extends React.Component
                 id:3
             }
 
-            ],
+            ]
             
         }
+    }
+    handleQuantity=(product)=>
+    {
+        console.log('product increased',product);
+        const{products}=this.statis;
+        products[products.indexOf(product)].qty+=1;
+        this.setState({products:products})
+
     }
     
        render()
@@ -42,7 +50,8 @@ class Cart extends React.Component
               {
                 products.map((product) => {
                     return <CartItem product={product} 
-                                     key={product.id}/>;
+                                     key={product.id}
+                                     increaseQty={this.handleQuantity}/>;
                     
                 })
                 
