@@ -11,6 +11,24 @@ class CartItem extends React.Component
             img:''
         }
     }
+    increaseQty=()=> {
+        console.log('this.state',this.statis);
+        //this.statis.qty=this.statis.qty;
+        this.statis.qty++;
+    }
+    decreaseQty=()=> {
+        console.log('this.state',this.statis);
+        //this.statis.qty=this.statis.qty;
+        var x=this.statis.qty;
+        x--;
+        this.statis.qty=x;
+
+    }
+    deleteQty=()=> {
+        console.log('this.state',this.statis);
+        // this.statis.qty=this.statis.qty;
+        this.statis.qty=0;
+    }
     render()
     {
         return(
@@ -23,9 +41,9 @@ class CartItem extends React.Component
                     <div style={{color:"grey"}}>{this.statis.price}</div>
                     <div style={{color:"grey"}}>{this.statis.qty}</div>
                     <div className="cart-item-action">
-                        <img alt="increase" className="action-icons" src="https://cdn-icons-png.flaticon.com/512/992/992651.png"/>
-                        <img alt="decrease" className="action-icons" src="https://as1.ftcdn.net/v2/jpg/03/73/49/86/1000_F_373498649_nBxauQ0ipBSVrVcMpWWVmTpXu3BLvRyY.jpg"/>
-                        <img alt="delete" className="action-icons" src="https://as2.ftcdn.net/v2/jpg/01/90/89/15/1000_F_190891550_N7uKp2aHE3mOc20dmtDytj7atgvbhdOu.jpg"/>
+                        <img alt="increase" className="action-icons" src="https://cdn-icons-png.flaticon.com/512/992/992651.png" onClick={this.increaseQty}/>
+                        <img alt="decrease" className="action-icons" src="https://cdn-icons-png.flaticon.com/512/992/992683.png" onClick={this.decreaseQty}/>
+                        <img alt="delete" className="action-icons" src="https://as2.ftcdn.net/v2/jpg/01/90/89/15/1000_F_190891550_N7uKp2aHE3mOc20dmtDytj7atgvbhdOu.jpg" onClick={this.deleteQty}/>
 
                     </div>
                 </div>
