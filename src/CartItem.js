@@ -18,7 +18,7 @@ class CartItem extends React.Component
                     <div style={{color:"grey"}}>QTY:{qty}</div>
                     <div className="cart-item-action">
                         <img alt="increase" className="action-icons" src="https://cdn-icons-png.flaticon.com/512/992/992651.png" onClick={()=> this.props.increaseQty(this.props.product)}/>
-                        <img alt="decrease" className="action-icons" src="https://cdn-icons-png.flaticon.com/512/992/992683.png" onClick={this.decreaseQty}/>
+                        <img alt="decrease" className="action-icons" src="https://cdn-icons-png.flaticon.com/512/992/992683.png" onClick={()=> this.props.decreaseQty(this.props.product)}/>
                         <img alt="delete" className="action-icons" src="https://as2.ftcdn.net/v2/jpg/01/90/89/15/1000_F_190891550_N7uKp2aHE3mOc20dmtDytj7atgvbhdOu.jpg" onClick={this.deleteQty}/>
 
                     </div>
