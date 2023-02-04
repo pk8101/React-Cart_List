@@ -10,21 +10,21 @@ class Cart extends React.Component
                 price:9999,
                 title:'Mobile Phone',
                 qty: 1,
-                img:'',
+                img:'https://i.pinimg.com/736x/0d/e6/2f/0de62fccb81c266407595062888b5c40--product-design-to-create.jpg',
                 id:1
             },
             {
                 price:99,
                 title:'earphones',
                 qty: 1,
-                img:'',
+                img:'https://images-na.ssl-images-amazon.com/images/G/01/musical-instruments/detail-page/B002DP1FTU_15.jpg',
                 id:2
             },
             {
                 price:990,
                 title:'powerbank',
                 qty: 1,
-                img:'',
+                img:'https://th.bing.com/th/id/R.b75450189d7066eb0e206448929855c7?rik=U9Va%2bzKxKw1EJA&riu=http%3a%2f%2fwww.gadgetdetail.com%2fwp-content%2fuploads%2f2016%2f10%2fXiaomi-10000-mAh-power-bank.jpg&ehk=%2fBXL2Weime6DAmbS%2bJnsiounJpXTbWLXVoF2Fq0x4uU%3d&risl=&pid=ImgRaw&r=0',
                 id:3
             }
 
