@@ -5,7 +5,7 @@ class Cart extends React.Component
     constructor()
     {
         super();
-        this.statis={
+        this.state={
             products:[{
                 price:9999,
                 title:'Mobile Phone',
@@ -34,24 +34,41 @@ class Cart extends React.Component
     }
     increasehandleQuantity=(product)=>
     {
-        console.log('product increased',product);
-        const{products}=this.statis;
-        products[products.indexOf(product)].qty+=1;
+        const{products}=this.state;
+        const index =products.indexOf(product);
+        products[index].qty+=1;
         this.setState({products:products})
 
     }
     decreasehandleQuantity=(product)=>
     {
-        const{products}=this.statis;
-        products[products.indexOf(product)].qty-=1;
+        const{products}=this.state;
+        const index =products.indexOf(product);
+        if(products[index].qty===0)
+        {
+            return;
+        }
+        else{
+            products[index].qty-=1;
+            this.setState({
+                products
+            })
+        }
+        
+    }
+    deleteQuantity=(id) =>{
+        const{products}=this.state;
+        const items =products.filter(
+            (items)=>items.id!==id);
         this.setState({
-            products
+            products:items
         })
+       
     }
     
        render()
        {
-        const{products}=this.statis;
+        const{products}=this.state;
         return(
             
             <div className="cart">
@@ -60,7 +77,8 @@ class Cart extends React.Component
                     return <CartItem product={product} 
                                      key={product.id}
                                      increaseQty={this.increasehandleQuantity}
-                                     decreaseQty={this.decreasehandleQuantity}/>;
+                                     decreaseQty={this.decreasehandleQuantity}
+                                     deleteQty={this.deleteQuantity}/>;
                     
                 })
                 
