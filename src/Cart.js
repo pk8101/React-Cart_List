@@ -56,6 +56,7 @@ class Cart extends React.Component
         }
         
     }
+    //added
     deleteQuantity=(id) =>{
         const{products}=this.state;
         const items =products.filter(
