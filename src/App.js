@@ -75,6 +75,15 @@ getCount=()=>{
     })
     return count;
 }
+totalPrice=()=>{
+    const{products}=this.state;
+    let i=0;
+    products.map((product)=>{
+        i=i+product.qty*product.price;
+    }
+    )
+    return i;
+}
     render()
     {
         const{products}=this.state
@@ -85,7 +94,8 @@ getCount=()=>{
                  products={products}
                  increaseQty={this.increasehandleQuantity}
                  decreaseQty={this.decreasehandleQuantity}
-                 deleteQty={this.deleteQuantity}/>;
+                 deleteQty={this.deleteQuantity}/>
+                 <div style={{padding: 10 ,fontSize:20 ,fontWeight:800}}>Total Price:{this.totalPrice()}</div>
             </div>
           );
         }
